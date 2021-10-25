@@ -22,6 +22,7 @@ public class SampleTeam implements Team {
         agents.add(agentB);
     }
 
+    @Override
     public void before(){
 
     };
