@@ -1,7 +1,7 @@
 package core;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public interface Team {
 
@@ -12,11 +12,11 @@ public interface Team {
     public void after(HashMap<String, Integer> actions, HashMap<String, Integer> wins);
 
     // 次の手を取得
-    public List<Integer> getAgentActions();
+    public ArrayList<Integer> getAgentActions();
 
     public String getTeamName();
 
-    public List<String> getAgentNames();
+    public ArrayList<String> getAgentNames();
 
 
 }

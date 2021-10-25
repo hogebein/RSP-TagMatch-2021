@@ -7,13 +7,12 @@ import core.Team;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 // 乱数選択チーム
 public class RandomTeam implements Team {
     private String teamName = "Random";
-    private List<Agent> agents = new ArrayList<>();
+    private ArrayList<Agent> agents = new ArrayList<>();
 
 
     public RandomTeam(){
@@ -37,8 +36,8 @@ public class RandomTeam implements Team {
     };
 
     @Override
-    public List<Integer> getAgentActions(){
-        List<Integer> actions = new ArrayList<>();
+    public ArrayList<Integer> getAgentActions(){
+        ArrayList<Integer> actions = new ArrayList<>();
         for(int i = 0; i < agents.size(); i++){
             actions.add(agents.get(i).getAction());
         }
@@ -48,8 +47,8 @@ public class RandomTeam implements Team {
 
     public String getTeamName(){ return teamName;}
 
-    public List<String> getAgentNames(){
-        List<String> names = new ArrayList<>();
+    public ArrayList<String> getAgentNames(){
+        ArrayList<String> names = new ArrayList<>();
         for(int i = 0; i < agents.size(); i++){
             names.add(agents.get(i).getName());
         }

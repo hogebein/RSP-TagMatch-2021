@@ -6,13 +6,12 @@ import core.Team;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 // ただ同じ手を出し続けるだけのチーム
 public class SampleTeam implements Team {
 
     private String teamName = "Sample";
-    private List<Agent> agents = new ArrayList<>();
+    private ArrayList<Agent> agents = new ArrayList<>();
 
 
     public SampleTeam(){
@@ -25,7 +24,7 @@ public class SampleTeam implements Team {
     @Override
     public void before(){
 
-    };
+    }
 
     @Override
     public void after(HashMap<String, Integer> actions, HashMap<String, Integer> wins){
@@ -34,22 +33,22 @@ public class SampleTeam implements Team {
             System.out.println(s.getKey() + ":" + s.getValue());
         }
         */
-    };
+    }
 
     @Override
-    public List<Integer> getAgentActions(){
-        List<Integer> actions = new ArrayList<>();
+    public ArrayList<Integer> getAgentActions(){
+        ArrayList<Integer> actions = new ArrayList<>();
         for(int i = 0; i < agents.size(); i++){
             actions.add(agents.get(i).getAction());
         }
         return actions;
-    };
+    }
 
 
     public String getTeamName(){ return teamName;}
 
-    public List<String> getAgentNames(){
-        List<String> names = new ArrayList<>();
+    public ArrayList<String> getAgentNames(){
+        ArrayList<String> names = new ArrayList<>();
         for(int i = 0; i < agents.size(); i++){
             names.add(agents.get(i).getName());
         }
