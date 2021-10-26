@@ -64,8 +64,7 @@ public class RSPArena {
     }
 
     // 各エージェントの行動を取得
-    private HashMap<String, Integer> getActions(Team A, Team B){
-        HashMap<String, Integer> actions = new HashMap<>();
+    private HashMap<String, Integer> getActions(Team A, Team B, HashMap<String, Integer> actions){
 
         List<String> nameA = A.getAgentNames();
         List<Integer> actionA = A.getAgentActions();
@@ -115,7 +114,7 @@ public class RSPArena {
 
         // じゃんけん
         HashMap<String, Integer> actions = getActions(A, B);
-        HashMap<String, Integer> wins = RSP2v2(A, B);
+        HashMap<String, Integer> wins = RSP2v2(A, B, actions);
 
         // 事後処理
         A.after(actions, wins);
