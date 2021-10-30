@@ -4,6 +4,7 @@ import java.util.*;
 import core.Team;
 import teams.RandomTeam;
 import teams.SampleTeam;
+import teams.TeamNH;
 
 
 public class RSPArena {
@@ -73,7 +74,7 @@ public class RSPArena {
 
         List<String> nameB = B.getAgentNames();
         List<Integer> actionB = B.getAgentActions();
-        for(int i = 0; i < nameA.size(); i++) actions.put(nameB.get(i), actionB.get(i));
+        for(int i = 0; i < nameB.size(); i++) actions.put(nameB.get(i), actionB.get(i));
 
         return actions;
     }
