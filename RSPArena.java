@@ -35,9 +35,8 @@ public class RSPArena {
     }
 
     // 2対2のじゃんけん
-    public HashMap<String, Integer> RSP2v2(Team A, Team B) {
+    public HashMap<String, Integer> RSP2v2(Team A, Team B, HashMap<String, Integer> actions) {
 
-        HashMap<String, Integer> actions = getActions(A, B);
         HashMap<String, Integer> wins = new HashMap<>();
         for (HashMap.Entry<String, Integer> s : actions.entrySet()) wins.put(s.getKey(), 0);
 
@@ -64,7 +63,9 @@ public class RSPArena {
     }
 
     // 各エージェントの行動を取得
-    private HashMap<String, Integer> getActions(Team A, Team B, HashMap<String, Integer> actions){
+    private HashMap<String, Integer> getActions(Team A, Team B){
+
+        HashMap<String, Integer> actions = new HashMap<>();
 
         List<String> nameA = A.getAgentNames();
         List<Integer> actionA = A.getAgentActions();
