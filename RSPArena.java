@@ -4,7 +4,7 @@ import java.util.*;
 import core.Team;
 import teams.RandomTeam;
 import teams.SampleTeam;
-import teams.TeamNH;
+
 
 
 public class RSPArena {
