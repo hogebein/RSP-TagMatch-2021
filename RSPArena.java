@@ -4,7 +4,7 @@ import java.util.*;
 import core.Team;
 import teams.RandomTeam;
 import teams.SampleTeam;
-
+import teams.TeamNH;
 
 
 public class RSPArena {
@@ -22,8 +22,22 @@ public class RSPArena {
 
     public RSPArena(boolean debug) {
         this.debug = debug;
+        init();
     }
 
+    // Results内を初期化
+    private void init(){
+        File results = new File("./Results");
+        if(!results.exists()) results.mkdir();
+        File[] files = results.listFiles();
+        for(int i=0; i<files.length; i++) {
+            if(files[i].exists() == false) {
+                continue;
+            } else if(files[i].isFile()) {
+                files[i].delete();
+            }
+        }
+    }
 
     // 1対1のじゃんけん　現状用なし
     public int RSP(int a, int b) {
@@ -85,8 +99,6 @@ public class RSPArena {
             String a1 =  A.getAgentNames().get(0), a2 =  A.getAgentNames().get(1);
             String b1 =  B.getAgentNames().get(0), b2 =  B.getAgentNames().get(1);
 
-            File results = new File("./Results");
-            if(!results.exists()) results.mkdir();
             File file = new File("./Results/" + A.getTeamName() + " vs " + B.getTeamName() + " - " + set + ".csv");
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(file,true)));
 
@@ -138,7 +150,7 @@ public class RSPArena {
     public void run() {
 
         // ここにチームインスタンスを置く(注：名前は重複しないように！！！)
-        Team[] teams = {new SampleTeam(), new RandomTeam()};
+        Team[] teams = {new SampleTeam(), new RandomTeam(), new TeamNH()};
         int rounds = 10000, sets = 5;
 
         for (int i = 0; i < teams.length; i++) {
