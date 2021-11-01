@@ -22,6 +22,11 @@ public class RandomTeam implements Team {
         agents.add(agentB);
     }
 
+    @Override
+    public void init(){
+
+    }
+
     public void before(){
 
     };

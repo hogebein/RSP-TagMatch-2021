@@ -157,6 +157,8 @@ public class RSPArena {
             for (int j = i + 1; j < teams.length; j++) {
                 Team A = teams[i];
                 Team B = teams[j];
+                A.init();
+                B.init();
                 for(int k = 0; k < sets; k++){
                     List<HashMap<String, Integer>> scores = new ArrayList<>();
                     for (int l = 0; l < rounds; l++) {
