@@ -2,9 +2,7 @@ import java.io.*;
 import java.util.*;
 
 import core.Team;
-import teams.RandomTeam;
-import teams.SampleTeam;
-import teams.TeamNH;
+import teams.*;
 
 
 public class RSPArena {
@@ -150,16 +148,14 @@ public class RSPArena {
     public void run() {
 
         // ここにチームインスタンスを置く(注：名前は重複しないように！！！)
-        Team[] teams = {new SampleTeam(), new RandomTeam(), new TeamNH()};
+        Team[] teams = {new TEMUMARUTeam(), new TeamOM(), new TeamNH()};
         int rounds = 10000, sets = 5;
 
         for (int i = 0; i < teams.length; i++) {
             for (int j = i + 1; j < teams.length; j++) {
-                Team A = teams[i];
-                Team B = teams[j];
-                A.init();
-                B.init();
                 for(int k = 0; k < sets; k++){
+                    Team A = teams[i];
+                    Team B = teams[j];
                     List<HashMap<String, Integer>> scores = new ArrayList<>();
                     for (int l = 0; l < rounds; l++) {
                         match(A, B, scores);

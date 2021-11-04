@@ -22,11 +22,6 @@ public class SampleTeam implements Team {
     }
 
     @Override
-    public void init(){
-        
-    }
-
-    @Override
     public void before(){
 
     }

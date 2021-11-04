@@ -5,9 +5,6 @@ import java.util.HashMap;
 
 public interface Team {
 
-    // 初期化
-    public void init();
-
     // 前処理
     public void before();
 
